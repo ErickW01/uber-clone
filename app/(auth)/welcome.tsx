@@ -60,7 +60,7 @@ const welcome = () => {
         onPress={() =>
           isLastSlide
             ? router.replace("/(auth)/sign-up")
-            : swiperRef.current?.scrollTo(1)
+            : swiperRef.current?.scrollTo(activeIndex + 1)
         }
         className="w-11/12 m-auto mt-10"
       />

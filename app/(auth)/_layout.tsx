@@ -1,9 +1,16 @@
-import { SplashScreen, Stack } from "expo-router";
+import { Redirect, SplashScreen, Stack } from "expo-router";
 import { useFonts } from "expo-font";
+import { useAuth } from "@clerk/clerk-expo";
 
 export default function Layout () {
 
     SplashScreen.preventAutoHideAsync();
+
+    const {isSignedIn}  = useAuth();
+
+    if(isSignedIn) {
+      return <Redirect href={'/'}/>
+    }
 
   return (
     <Stack>
