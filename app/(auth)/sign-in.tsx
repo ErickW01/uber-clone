@@ -28,7 +28,7 @@ export default function signIn() {
             label={"Email"}
             placeholder="Enter Your Email"
             icon={icons.email}
-            value={form.name}
+            value={form.email}
             onChangeText={(value: any) =>
               setForm({
                 ...form,
@@ -54,7 +54,7 @@ export default function signIn() {
             onPress={onSignInPress}
             className="mt-6"
           />
-          <OAuth />
+          <OAuth isLogin/>
           <Link
             href={"/sign-up"}
             className="text-lg text-center text-general-200 mt-10"

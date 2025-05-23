@@ -1,7 +1,7 @@
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import { ClerkLoaded, ClerkProvider } from "@clerk/clerk-expo";
-import {tokenCache} from '@clerk/clerk-expo/token-cache';
+import { tokenCache } from "@clerk/clerk-expo/token-cache";
 
 export default function RootLayout() {
   const [loaded] = useFonts({
@@ -14,13 +14,16 @@ export default function RootLayout() {
     "Jakarta-SemiBold": require("../assets/fonts/PlusJakartaSans-SemiBold.ttf"),
   });
 
-  const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
-  if (!publishableKey) {
-    throw new Error("Missing PUBLISHABLE key");
-  }
+  // const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  // if (!publishableKey) {
+  //   throw new Error("Missing PUBLISHABLE key");
+  // }
 
   return (
-    <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
+    <ClerkProvider
+      // publishableKey={publishableKey}
+      tokenCache={tokenCache}
+    >
       <ClerkLoaded>
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />

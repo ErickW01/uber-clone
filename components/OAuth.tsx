@@ -3,7 +3,7 @@ import React from "react";
 import CustomBtn from "./CustomBtn";
 import { icons } from "@/constants";
 
-const OAuth = () => {
+const OAuth = ({isLogin = false}) => {
   const handleGoogleSignIn = async () => {};
   return (
     <View>
@@ -13,7 +13,7 @@ const OAuth = () => {
         <View className="flex-1 h-[1px] bg-general-100" />
       </View>
       <CustomBtn
-        title="Sign Up w/ Google"
+        title={`${isLogin ? "Login w/ Google" : "Sign-up w/ Google"}`}
         className="mt-5 w-full shadow-none"
         IconLeft={() => (
           <Image
